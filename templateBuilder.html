@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment</title>
+</head>
+<style type="text/css">
+	.div{
+		background: grey;
+		color: white;
+		height: 100px;
+		display: inline-block;
+		margin-bottom: 2px;
+		line-height: 100px;
+		text-align: center;
+	}
+
+	.div:nth-child(even){
+		background: orange;
+		color: white;
+		height: 100px;
+		display: inline-block;
+		margin-bottom: 2px;
+	}
+
+
+	.btn-div{
+		background: grey;
+		color: white;
+		height: 20px;
+		display: inline-block;
+		margin-bottom: 2px;
+		text-align: center;
+	}
+
+	.btn-div:nth-child(even){
+		background: orange;
+		color: white;
+		height: 20px;
+		display: inline-block;
+		margin-bottom: 2px;
+	}
+
+	button{
+		width: 100%;
+		display:block; 
+		cursor: pointer;
+		margin-top: 5px;
+		background: transparent;
+		border: none;
+		padding-top: 4px;
+	}
+	.clr{
+		width: 25%;
+		background: black;
+		color: white;
+		margin: auto;
+		margin-top: 10px;
+		height: 30px;
+		border-radius: 5px;
+		font-size: 15px;
+
+	}
+	.clr:hover{
+		background: green;
+		font-weight: bolder;
+		color: black;
+
+
+	}
+</style>
+<body style="width: 99%;margin: 1%;">
+
+
+<h1 style="text-align: center;">Template Builder</h1>
+
+<div id="container" style="width: 80%;display: inline-block;">
+	
+
+</div>
+
+<div style="width: 20%;background:azure;display: inline-block;float: right;margin: auto;text-align: center;">
+	
+		<button onclick="generateDiv(1)"> 
+				<div class="btn-div" style="width: 100%"></div>
+		</button>
+		1 Column
+		<button onclick="generateDiv(2)"> 
+				<div class="btn-div" style="width: 49%"></div>
+				<div class="btn-div" style="width: 49%"></div>
+		</button>
+		2 Column
+		<button onclick="generateDiv(3)"> 
+				<div class="btn-div" style="width: 32%"></div>
+				<div class="btn-div" style="width: 32%"></div>
+				<div class="btn-div" style="width: 32%"></div>
+		</button>
+		3 Column
+		<button onclick="generateDiv(4)"> 
+				<div class="btn-div" style="width: 24%"></div>
+				<div class="btn-div" style="width: 24%"></div>
+				<div class="btn-div" style="width: 22%"></div>
+				<div class="btn-div" style="width: 24%"></div>
+		</button>
+		4 Column
+		<button onclick="generateDiv(5)"> 
+								<div class="btn-div" style="width: 19%"></div>
+								<div class="btn-div" style="width: 19%"></div>
+								<div class="btn-div" style="width: 19%"></div>
+								<div class="btn-div" style="width: 19%"></div>
+								<div class="btn-div" style="width: 18%"></div>
+		</button>
+		5 Column
+		<button onclick="generateDiv(6)">
+								<div class="btn-div" style="width: 16%"></div>
+								<div class="btn-div" style="width: 16%"></div>
+								<div class="btn-div" style="width: 15%"></div>
+								<div class="btn-div" style="width: 15%"></div>
+								<div class="btn-div" style="width: 15%"></div>
+								<div class="btn-div" style="width: 15%"></div> 
+		</button>
+		6 Column
+		<button onclick="leftSidebar()"> 
+								<div class="btn-div" style="width: 20%"></div>
+								<div class="btn-div" style="width: 78%"></div>
+		</button>
+		Left Sidebar
+		<button onclick="rightSidebar()"> 
+								<div class="btn-div" style="width: 78%"></div>
+								<div class="btn-div" style="width: 20%"></div>
+
+		</button>
+		Right Sidebar
+		<button onclick="leftRightSidebar()"> 
+												<div class="btn-div" style="width: 10%"></div>
+												<div class="btn-div" style="width: 77%"></div>
+												<div class="btn-div" style="width: 10%"></div>
+
+		</button>
+		Left Right Sidebar
+
+
+	   <button class="clr" onclick="clear1()">
+	   	Clear
+	   </button>
+
+</div>
+
+<script type="text/javascript">
+	
+
+	function generateDiv(col){
+		// clear();
+			for(i=1;i<=col;i++){
+				var width = 100/col;
+					document.getElementById("container").innerHTML += ("<div class='div' style='width:"+width+"%'>"+i+"</div>");	
+			}
+			document.getElementById("container").innerHTML += ("<br>");
+	}
+
+
+	function leftRightSidebar() {
+			document.getElementById("container").innerHTML += ("<div class='div' style='width:10%'></div>");	
+			document.getElementById("container").innerHTML += ("<div class='div' style='width:80%'></div>");
+			document.getElementById("container").innerHTML += ("<div class='div' style='width:10%'></div>");
+			document.getElementById("container").innerHTML += ("<br>");
+	}
+
+
+	function rightSidebar() {
+			document.getElementById("container").innerHTML += ("<div class='div' style='width:80%'></div>");
+			document.getElementById("container").innerHTML += ("<div class='div' style='width:20%'></div>");
+			document.getElementById("container").innerHTML += ("<br>");
+	}
+
+
+	function leftSidebar() {
+			document.getElementById("container").innerHTML += ("<div class='div' style='width:20%'></div>");	
+			document.getElementById("container").innerHTML += ("<div class='div' style='width:80%'></div>");
+			document.getElementById("container").innerHTML += ("<br>");
+	}
+
+		function clear1() {
+			console.log('hello');
+			document.getElementById("container").innerHTML = " ";
+	}
+
+
+</script>
+</body>
+</html>

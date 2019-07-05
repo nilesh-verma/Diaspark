@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practicals</title>
+</head>
+<body>
+<select id="color">
+	<option value="Red">Red</option>
+	<option value="Black">Black</option>
+	<option value="green">green</option>
+	<option value="yellow">yellow</option>
+</select>
+<button onclick="change();">Submit</button><br>
+<div id="div1" onclick="change2();" style="width: 200px;height: 200px;float: left;border: 1px solid Black;">
+	
+</div>
+<div id="div2"  style="width: 200px;height: 200px;float: left;border: 1px solid Black;">
+	
+</div>
+</body>
+<script type="text/javascript">
+	var c2;
+	function change(){
+		
+		var c= document.getElementById('color').value;
+		console.log(c);
+		document.getElementById('div1').style.background = ''+c+'';
+		c2=c;
+	}
+	function change2(){
+		
+		
+		document.getElementById('div2').style.background = ''+c2+'';
+	}
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practical</title>
+	<style type="text/css">
+		div{
+		width: 50%;
+		height: 500px;
+		border: 1px solid black;
+		 
+		}
+
+
+	</style>
+</head>
+<body>
+	<input type="text" id="url" name="">
+	<button onclick="show()">submit</button>
+<div id="block">
+
+</div>
+</body>
+<script type="text/javascript">
+	function show() {
+		// body...
+		var sr= document.getElementById('url').value;
+		document.getElementById('block').innerHTML=("<img src='"+sr+"' alt='not found'>");
+		//document.getElementById('block').style.background="url('"+sr+"')";
+	}
+</script>
+</html>

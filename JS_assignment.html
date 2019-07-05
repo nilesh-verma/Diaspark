@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Assignments</title>
+</head>
+<body>
+<h3>1.Create a function to declare student information(firstName, lastName, class) as an object and display “fullName” using object's property.
+</h3>
+<input type="text" placeholder="FirstName" id="FirstName">
+<input type="text" placeholder="LastName" id="LastName">
+<input type="text" placeholder="class" id="class">
+<button onclick="fullname1()">Apply</button>
+<p id="name"></p>
+<h3>2.Create a program to create a date object and display the month name from it using switch-case statement.</h3>
+<p id="month"></p>
+<h3>3/4.Create a program to calculate compound interest and simple interest using math object</h3>
+<div> <label>Amount: </label> <input id="p"> </div>
+        <div> <label>Rate (%): </label> <input id="r"> </div>
+        <div> <label>No. of Years: </label> <input id="t"> </div>
+        <div id="cmp"> <label>Compunding Times Per Year: </label> <input id="n" value="1"><em style="color: red;">Only for Compound Interest</em> </div>
+
+        <button onclick="calculate();">Compound Interest</button>
+        <button onclick="Simplecalculate();">Simple Interest</button>
+        <h4 id="result"></h4>
+</body>
+<script type="text/javascript">
+	function fullname1(){
+        var student={
+            firstName:document.getElementById('FirstName').value,
+            lastName:document.getElementById('LastName').value,
+            }
+            document.getElementById('name').innerHTML="Hello "+student.firstName+" "+student.lastName;
+    }
+
+
+    var d = new Date();
+	var m= d.getMonth();
+	switch (m){
+		case 0:month = "Jan";break;
+		case 1:month = "Feb";break;
+		case 2:month = "March";break;
+		case 3:month = "April";break;
+		case 4:month = "May";break;
+		case 5:month = "June";break;
+		case 6:month = "July";break;
+		case 7:month = "August";break;
+		case 8:month = "September";break;
+		case 9:month = "October";break;
+		case 10:month = "November";break;
+		case 11:month = "December";break;
+		
+	}
+		function calculate()
+            {
+                p = document.getElementById("p").value;
+                n = document.getElementById("n").value; // no. of compoundings per year
+                t = document.getElementById("t").value; // no. of years
+                r = document.getElementById("r").value;
+                result = document.getElementById("result");
+
+                // The equation is A = p * [[1 + (r/n)] ^ nt]
+                A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
+
+                // toFixed is used for rounding the amount with two decimal places.
+                result.innerHTML = "The total amount is " + A.toFixed(2);
+
+                result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
+            }
+
+            function Simplecalculate(){
+            	document.getElementById("cmp").style.display="none";
+            	p = document.getElementById("p").value;
+                n = document.getElementById("n").value; // no. of simple per year
+                t = document.getElementById("t").value; // no. of years
+                r = document.getElementById("r").value;
+                result = document.getElementById("result");
+
+                // The equation is A = p * [[1 + (r/n)] ^ nt]
+                var	i=(p*r*t)/100
+                A = p + i;
+                var f= Number(p);
+                // toFixed is used for rounding the amount with two decimal places.
+                result.innerHTML = "The total amount is " +(f+i)+" and Interest is "+i;
+
+                // result.innerHTML += "<br> The interest is " + i;
+            }
+
+
+</script>
+<script type="text/javascript">
+	document.getElementById('month').innerHTML='This month is'+month;
+</script>
+</html>

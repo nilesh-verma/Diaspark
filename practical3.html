@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practical 3</title>
+</head>
+<body>
+<input type="date" id="date" name="">
+<button onclick="Updates()">Updates</button>
+<p id="date"></p>
+</body>
+<script type="text/javascript">
+	<script>
+   function WaitingChrismas(){
+      let a = document.getElementById("d");
+   var today = new Date();
+   var chrismasDate = new Date(2019,11,25);
+   var timeDiff = Math.abs(chrismasDate.getTime()-today.getTime() );
+
+   let oneday=(1000 * 3600 * 24);
+     let dayDifference = Math.ceil(timeDiff / oneday);
+
+     var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+ 
+      a.innerText=dayDifference+":"+hours+":"+minutes+":"+seconds;
+      return dayDifference+":"+hours+":"+minutes+":"+seconds;
+
+
+
+
+}
+
+
+
+setInterval(function(){ WaitingChrismas()}, 1000);
+
+    </script>
+</script>
+</html>
